@@ -1,0 +1,24 @@
+{
+    "name": "react-avanzado-platzi",
+    "version": "1.0.0",
+    "description": "Curso de React avanzado - Platzi",
+    "main": "webpack.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mau02ro/reactAvanzado-Platzi.git"
+    },
+    "keywords": [],
+    "author": "Mauro Hernández <mauroDeveloper@hotmail.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mau02ro/reactAvanzado-Platzi/issues"
+    },
+    "homepage": "https://github.com/mau02ro/reactAvanzado-Platzi#readme",
+    "devDependencies": {
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    }
+}

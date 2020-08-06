@@ -6,8 +6,8 @@ Curso de React avanzado - Platzi
 
 - **Empaquetador y transpilador**
 
-  - [Webpack]()
-  - [Babel]()
+  - [Webpack](https://webpack.js.org/)
+  - [Babel](https://babeljs.io/)
 
 - **Estilando con CSS en JS**
 
@@ -24,8 +24,15 @@ Curso de React avanzado - Platzi
 
 - **Enrutador SPA**
 
-  - [React Router]()
+  - [Reach Router]()
 
 - **Buenas prácticas**
+
   - [Lighthouse]()
   - [Cypress]()
+
+- **SEO, PWA, Deploy**
+
+  - [React Helmet]()
+  - [Workbox]()
+  - [Now]
