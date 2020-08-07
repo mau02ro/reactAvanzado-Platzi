@@ -1,4 +1,4 @@
-import React from './node_modules/react'
+import React from 'react'
 import { Image, Anchor } from './styles'
 const DEFAULT_IMAGE = 'https://i.imgur.com/dJa0Hpl.jpg'
 
