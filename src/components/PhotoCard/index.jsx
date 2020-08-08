@@ -1,28 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import { Article, Img, ImgWrapper, Button } from './styles'
-import { MdFavoriteBorder } from 'react-icons/md'
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { useNearScreen } from '../hooks/useNearScreen'
 
 export const PhotoCard = ({ id, likes = 0, src }) => {
-  const ref = useRef(null)
-  const [show, setShow] = useState(false)
-
-  useEffect(() => {
-    Promise.resolve(
-      typeof window.IntersectionObserver !== 'undefined'
-        ? window.IntersectionObserver : import('intersection-observer')
-    )
-      .then(() => {
-        const observer = new window.IntersectionObserver((entires) => {
-          const { isIntersecting } = entires[0]
-          if (isIntersecting) {
-            setShow(true)
-            observer.disconnect()
-          }
-        })
-
-        observer.observe(ref.current)
-      })
-  }, [ref])
+  const [show, ref] = useNearScreen()
+  const [storedValue, setLocalStorage] = useLocalStorage(`like-${id}`)
 
   return (
     <Article ref={ref}>
@@ -35,8 +19,11 @@ export const PhotoCard = ({ id, likes = 0, src }) => {
               </ImgWrapper>
             </a>
 
-            <Button>
-              <MdFavoriteBorder size='30px' />{likes} likes!
+            <Button onClick={() => setLocalStorage(!storedValue)}>
+              {
+                storedValue ? <MdFavorite size='30px' /> : <MdFavoriteBorder size='30px' />
+              }
+              {likes} likes!
             </Button>
           </>
         )
